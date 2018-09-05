@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <h1 id='title'>Coder, dude</h1>
+    <p id='description'>This site is for coders</p>
+      <form id='survey-form'>
+        <label for="name" id="name-label">Name</label>
+        <input type='text' id='name' placeholder="your name" required>
+        <label for="email" id="email-label">Email</label>
+        <input type='email' id='email' placeholder="your email" required>
+        <label for="number" id="number-label">Number</label>
+        <input type="number" id='number' min="6" max="7" placeholder="phone number">
+        <br>
+        <br>
+        <label for="dropdown">Your Car: </label>
+        <select name="cars" id="dropdown">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select>
+          <br>
+          <input type="radio" name="gender" value="male"> Male<br>
+          <input type="radio" name="gender" value="female"> Female<br>
+          <input type="radio" name="gender" value="other"> Other <br>
+          <br>
+          <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+          <input type="checkbox" name="vehicle2" value="Car"> I have a car<br>
+          <input type="checkbox" name="vehicle3" value="Boat" checked> I have a boat<br>
+          <br>
+          <textarea name="message" rows="10" cols="30" id='textarea'>The cat was playing in the garden.</textarea>
+          <input type="submit" id="submit">
+    </form>
+
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

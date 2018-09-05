@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+var count = 0;
+
+function cc(card) {
+
+let action = "";
+
+  if (card >= 2 && card <= 6 ){
+    count++;
+
+    if (count > 0) action = 'Bet';
+    else action = 'Hold'
+    let result = count + " " + action;
+
+    return result;
+  } 
+  else if (card >=7 && card <=9) {
+    
+    if (count <= 0) action = 'Hold';
+    else action = 'Bet';
+    let result = count + " " + action;
+
+    return result;
+
+  } else {
+    count--;
+    if (count <= 0) action = 'Hold';
+    else action = 'Bet';
+    let result = count + " " + action;
+
+    return result;
+  }
+  
+}
+
+// Sample Card sequence: 10, J, Q, K, A
+
+cc(10); 
+cc('J'); 
+cc('Q'); 
+cc('K'); 
+console.log(cc('A'));
+
+/* 
+
+Count:       	Cards:
++1	          2, 3, 4, 5, 6
+0	            7, 8, 9
+-1	          10, 'J', 'Q', 'K', 'A'
+
+You will write a card counting function. 
+It will receive a card parameter, 
+which can be a number or a string, 
+and increment or decrement the global count variable 
+according to the card's value (see table). 
+The function will then return a string with the current count 
+and the string Bet if the count is positive, 
+or Hold if the count is zero or negative. 
+The current count and the player's decision (Bet or Hold) 
+should be separated by a single space.
+
+Example Output
+-3 Hold
+5 Bet
+
+*/
+
+    </script>
+</body>
+</html>
