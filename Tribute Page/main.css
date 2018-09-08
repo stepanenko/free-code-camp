@@ -1,0 +1,23 @@
+body {
+    background: silver;
+}
+img {
+    max-width: 100%;
+    display: block; 
+    height: auto;
+    margin: 0 auto;
+}
+.box {
+    background: #55a5b9;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    transform: translate3d(50px, 100px, 1px)
+}
+.box2 {
+    background: #55a763;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    transform: translate3d(70px, 120px, -5px)
+}
