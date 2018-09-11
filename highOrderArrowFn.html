@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34];
+
+const squareList = (arr) => {
+  "use strict";
+  // change code below this line
+  let squaredIntegers = arr;
+  squaredIntegers = squaredIntegers
+    .filter(n => n > 0 && Number.isInteger(n))
+    .map(n => n*n);
+  // change code above this line
+  return squaredIntegers;
+};
+// test your code
+const squaredIntegers = squareList(realNumberArray);
+console.log(squaredIntegers);  
+
+
+
+</script>
+</body>
+</html>
