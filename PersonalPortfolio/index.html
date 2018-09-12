@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  #welcome-section {
+    height: 100vh;
+    background: pink;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+  }
+  @media (max-width: 700px) {
+    #welcome-section {
+    height: 100vh;
+    background: #7dc474;
+  }
+  }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <a href="#projects">My projects</a>
+  </nav>
+  <section id="welcome-section">
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <a href="https://github.com/stepanenko" id="profile-link" target="_blank">Github</a>
+  </section>
+  <section id="projects">
+    <div class="project-tile"></div>
+    <a href="#">My Great Project</a>
+  </section>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
