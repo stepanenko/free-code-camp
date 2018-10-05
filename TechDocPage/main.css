@@ -1,0 +1,31 @@
+.out {
+  display: flex;
+}
+.menu {
+  background: #bb6464;
+  flex-basis: 160px;
+  padding: 15px;
+}
+.content {
+  background: #6c6ab1;
+  flex-basis: 200px;
+  padding: 20px;
+  flex-grow: 1;
+}
+section {
+  margin-bottom: 30px;
+}
+@media (max-width: 800px) {
+  .out {
+    flex-wrap: wrap;
+  }
+  .menu {
+    flex-basis: 100%;
+  }
+  #navbar a {
+    display: inline-block;
+  }
+  #navbar header {
+    display: inline-block;
+  }
+}
