@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destr</title>
+</head>
+<body>
+  <script>
+  
+const [t, n] = [1,2,3,4,5];
+console.log(t, n); // 1 2
+
+const [x, y,,, z] = [1,2,3,4,5,6];
+console.log(x,y,z); // 1 2 5
+
+let a = 6, b = 8;
+function change(){
+  [b, a] = [a, b];
+  console.log(a, b) // 8 6
+}
+
+change();
+
+const [n1, n2, ...arr] = [1,2,3,4,5,7];
+console.log(n1, n2); // 1 2
+console.log(arr); // 3 4 5 7
+
+const obj = {
+  name: 'Sergio',
+  age: 28,
+  nationality: 'ukr',
+  location: 'Lviv'
+}
+
+const profileUpdate = (profileData) => {
+  const { name, location } = profileData;
+  return [name , location];
+}
+
+console.log(profileUpdate(obj)) // ["Sergio", "Lviv"]
+
+const update = ({name, age, location}) => {
+  return {name, age, location};
+}
+
+console.log(update(obj))
+
+  </script>
+</body>
+</html>
