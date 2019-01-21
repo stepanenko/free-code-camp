@@ -8,4 +8,8 @@ function booWho(bool) {
 
 console.log(booWho('true'));
 
-// console.log(typeof true);
+// Given solution
+
+function booWho2(bool) {
+  return typeof bool === 'boolean';
+}
