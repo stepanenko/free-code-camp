@@ -2,25 +2,20 @@
 // Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
 
 function titleCase(str) {
+str = str
+  .split(' ')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+  .join(' ');
   return str;
 }
 
-// titleCase("I'm a little tea pot");
+console.log(titleCase("I'm a bnHtn tea pot"));
 
-let n = "I'm a little tea pot";
-n = n.split(' ');
-
-let r = n.map(word => word.charAt(0).toUpperCase() + word.slice(1));
-console.log(...r)
-
-for (let i = 0; i < n.length; i++) {
-  let first = n[i][0].toUpperCase();
-  n[i][0] = first;
-  // console.log(n[i][0])
-  // n[i][0] = first;
-  // console.log(n[i][0])
+// Given solution
+function titleCase2(str) {
+  var convertToArray = str.toLowerCase().split(" ");
+  var result = convertToArray.map(function(val){
+      return val.replace(val.charAt(0), val.charAt(0).toUpperCase());
+  });
+  return result.join(" ");
 }
-
-let b = 'hello';
-let t = b[0].toUpperCase();
-// console.log(...n);
