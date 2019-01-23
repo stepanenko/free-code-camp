@@ -19,3 +19,8 @@ function titleCase2(str) {
   });
   return result.join(" ");
 }
+
+// Given solution 2
+function titleCase3(str) {
+  return str.toLowerCase().replace(/(^|\s)\S/g, (L) => L.toUpperCase());
+}
