@@ -1,6 +1,5 @@
 
-// Functional programming is a style of programming where solutions are simple, isolated functions, without any side effects outside of the function scope.
-
+// Functional programming is a style of programming where solutions are simple, isolated functions, without any side effects outside of the function scope. 
 // INPUT -> PROCESS -> OUTPUT
 
 // TASK: Call the getTea function to get 40 cups of tea for the team, and store them in the tea4TeamFCC variable.
