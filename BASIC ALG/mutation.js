@@ -33,3 +33,4 @@ function mutation2(arr) {
     .every(letter => arr[0].toLowerCase().indexOf(letter) != -1);
 }
 console.log(mutation2(["hello", "HELL"]));
+
