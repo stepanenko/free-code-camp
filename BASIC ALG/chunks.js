@@ -10,11 +10,15 @@ function chunkArrayInGroups(arr, size) {
   return newArr;
 }
 
-console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
+// console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
 
-let arr = ["a", "b", "c", "d"];
-let newArr = [];
-for (let i = 0; i < arr.length; i = i + 2) {
-  newArr.push(arr.slice(i, i + 2));
+// Given solution
+function chunkArrayInGroups2(arr, size) {
+  var newArr = [];
+  while (arr.length) {
+    newArr.push(arr.splice(0, size));
+  }
+  return newArr;
 }
-// console.log(newArr);
+
+console.log(chunkArrayInGroups2(["a", "b", "c", "d"], 2));
