@@ -14,3 +14,5 @@ function incrementer () {
 
 var newValue = incrementer(); // Should equal 5
 console.log(fixedValue); // Should print 4
+
+// Here is still something missing. We didn't alter the global variable value, but the function incrementer would not work without the global variable fixedValue being there.
