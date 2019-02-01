@@ -23,8 +23,8 @@ The functional programming software development approach breaks a program into s
 
 ## Additional Info
 
-Functions that can be assigned to a variable, passed into another function, or returned from another function just like any other normal value, are called first class functions. In JavaScript, all functions are first class functions.
+Functions that can be assigned to a variable, passed into another function, or returned from another function just like any other normal value, are called **first class functions**. In JavaScript, all functions are __first class functions__.
 
-The functions that take a function as an argument, or return a function as a return value are called higher order functions.
+The functions that take a function as an argument, or return a function as a return value are called **higher order functions**.
 
-When the functions are passed in to another function or returned from another function, then those functions which gets passed in or returned can be called a lambda
+When the functions are passed in to another function or returned from another function, then those functions which gets passed in or returned can be called a **lambda**.
