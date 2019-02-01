@@ -28,3 +28,9 @@ Functions that can be assigned to a variable, passed into another function, or r
 The functions that take a function as an argument, or return a function as a return value are called **higher order functions**.
 
 When the functions are passed in to another function or returned from another function, then those functions which gets passed in or returned can be called a **lambda**.
+
+## Even more info
+
+One of the **core principle** of functional programming is to **not change things**. Changes lead to bugs. It's easier to prevent bugs knowing that your functions don't change anything, including the function arguments or any global variable.
+
+Recall that in functional programming, changing or altering things is called **mutation**, and the outcome is called a **side effect**. A function, ideally, should be a **pure function**, meaning that it does not cause any side effects.
