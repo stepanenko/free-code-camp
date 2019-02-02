@@ -6,34 +6,44 @@
 // TASK: Refactor (rewrite) the code so the global array bookList is not changed inside either function. The add function should add the given bookName to the end of an array. The remove function should remove the given bookName from an array. Both functions should return an array, and any new parameters should be added before the bookName one.
 
 // the global variable
-var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+const bookList = ["1", "2", "3", "4"];
 
-/* This function should add a book to the list and return the list */
-// New parameters should come before the bookName one
+function add(arr, bookName) {
+  let newArr = [...arr];
 
-// Add your code below this line
-function add (bookName) {
-  
-  return bookList.push(bookName);
-  
-  // Add your code above this line
+  newArr.push(bookName);
+
+  return newArr;
 }
 
-/* This function should remove a book from the list and return the list */
-// New parameters should come before the bookName one
+function remove(arr, bookName) {
+  let newArr = [...arr];
 
-// Add your code below this line
-function remove (bookName) {
-  if (bookList.indexOf(bookName) >= 0) {
-    
-    return bookList.splice(0, 1, bookName);
-    
-    // Add your code above this line
-    }
+  if (newArr.indexOf(bookName) >= 0) {
+    newArr.splice(newArr.indexOf(bookName), 1);
+  }
+
+  return newArr;
 }
 
-var newBookList = add(bookList, 'A Brief History of Time');
-var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
-var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
+
+// Given solution
+function add2(arr, book) {
+  return [...arr, book];
+}
+
+function remove2(arr, book) {
+  if (arr.indexOf(book) > -1) {
+    return arr.filter(v => v !== book);
+  }
+  return 'No such book'
+}
+
+let newBookList = add2(bookList, '0');
+let newerBookList = remove2(bookList, '3');
+let newestBookList = remove2(add(bookList, '6'), '1');
 
 console.log(bookList);
+console.log(newBookList);
+console.log(newerBookList);
+console.log(newestBookList);
