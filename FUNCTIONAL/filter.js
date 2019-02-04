@@ -56,3 +56,10 @@ filteredList = watchList
   });
 
 console.log(filteredList);
+
+// Given solution:
+var filteredList2 = watchList.map(function(e) {
+  return {title: e["Title"], rating: e["imdbRating"]}
+}).filter((e) => e.rating >= 8);
+
+console.log([1, 2] === [1, 2]); // ??
