@@ -1,6 +1,6 @@
-# Introduction to the Functional Programming Challenges
+# Functional Programming Challenges
 
-Functional programming is an approach to software development based around the evaluation of functions. Like mathematics, functions in programming map input to output to produce a result. You can combine basic functions in many ways to build more and more complex programs.
+Functional programming is an approach to software development based around the evaluation of functions. Like mathematics, functions in programming map input to output to produce a result. **Functional programming is all about creating and using non-mutating functions.**
 
 ## Functional programming follows a few core principles:
 
