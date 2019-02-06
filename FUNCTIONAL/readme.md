@@ -34,7 +34,10 @@ When the functions are passed in to another function or returned from another fu
 One of the **core principle** of functional programming is to **not change things**. Changes lead to bugs. It's easier to prevent bugs knowing that your functions don't change anything, including the function arguments or any global variable.
 
 Recall that in functional programming, changing or altering things is called **mutation**, and the outcome is called a **side effect**. A function, ideally, should be a **pure function**, meaning that it does not cause any side effects.
-```var arr = [1, 2, 3];
+
+``` 
+var arr = [1, 2, 3];
 arr.push([4, 5, 6]);
 // arr is changed to [1, 2, 3, [4, 5, 6]]
-// Not the functional programming way```
+// Not the functional programming way
+```
