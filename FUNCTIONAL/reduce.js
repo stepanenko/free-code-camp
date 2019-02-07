@@ -127,4 +127,8 @@ var reduced = mapped.reduce((acc, cur) => acc + cur);
 
 var averageRating = reduced/mapped.length;
 
-console.log(averageRating);
+
+// Given solution:
+var averageRating2 = watchList.filter(x => x.Director === "Christopher Nolan").map(x => Number(x.imdbRating)).reduce((x1, x2) => x1 + x2) / watchList.filter(x => x.Director === "Christopher Nolan").length;
+
+console.log(averageRating2);
