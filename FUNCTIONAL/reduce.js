@@ -125,7 +125,7 @@ var mapped = watchList
 
 var reduced = mapped.reduce((acc, cur) => acc + cur);
 
-var averageRating = reduced/mapped.length;
+var averageRating = reduced / mapped.length;
 
 
 // Given solution:
