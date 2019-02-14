@@ -4,13 +4,20 @@
 function destroyer(arr) {
   var args = [...arguments].slice(1);
 
-  var i = 0;
-  while (arr.includes(args[i])) {
-    arr.splice(arr.indexOf(args[i]), 1);
-    i++;
+  // var i = 0;
+  // while (arr.includes(args[i])) {
+  //   arr.splice(arr.indexOf(args[i]), 1);
+  //   i++;
+  // }
+  // var look = arr.find(el => el === 2);
+  // console.log(look);
+
+  var newArr = [];
+  for (let i = 0; i < args.length; i++) {
+    newArr.push(...arr.filter(el => el !== args[i]));
   }
-  var look = arr.find(el => el === 2 || el === 3);
-  console.log(look);
+  
+  // somehow sort() can be used...
 
   // arr.forEach(el => {
   //   if (el === args[0] || el === args[1]) {
@@ -18,7 +25,7 @@ function destroyer(arr) {
   //     arr.splice(arr.indexOf(el), 1);
   //   }
   // });
-  // console.log(arr);
+  console.log(newArr);
   // return arr.filter(el => );
 }
 
