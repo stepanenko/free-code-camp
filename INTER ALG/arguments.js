@@ -9,7 +9,8 @@ function destroyer(arr) {
     arr.splice(arr.indexOf(args[i]), 1);
     i++;
   }
-  console.log(arr);
+  var look = arr.find(el => el === 2 || el === 3);
+  console.log(look);
 
   // arr.forEach(el => {
   //   if (el === args[0] || el === args[1]) {
