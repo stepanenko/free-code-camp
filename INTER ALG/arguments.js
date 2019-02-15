@@ -5,14 +5,15 @@ function destroyer(arr) {
   var args = [...arguments].slice(1);
 
   // arr.sort((a, b) => a - b);
-
+  // var newArr = [];
   args.forEach(arg => {
-    if (arr.includes(arg)) {
-      arr.splice(arr.indexOf(arg), 1);
-      console.log('deleted')
-    }
+  //   newArr.push(arr.filter(el => el !== arg));
+  console.log('forEach');
+  while (arr.includes(arg)) {
+    arr.splice(arr.indexOf(arg), 1);
+    console.log('while');
+  }
   });
-
   console.log(arr);
 }
 
