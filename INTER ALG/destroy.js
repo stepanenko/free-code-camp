@@ -7,12 +7,13 @@ function destroyer(arr) {
   // arr.sort((a, b) => a - b);
   // var newArr = [];
   args.forEach(arg => {
-  //   newArr.push(arr.filter(el => el !== arg));
-  console.log('forEach');
-  while (arr.includes(arg)) {
-    arr.splice(arr.indexOf(arg), 1);
-    console.log('while');
-  }
+    //   newArr.push(arr.filter(el => el !== arg));
+    console.log('forEach');
+    while (arr.includes(arg)) {
+      let index = arr.indexOf(arg);
+      arr.splice(index, 1);
+      console.log('while');
+    }
   });
   console.log(arr);
 }
