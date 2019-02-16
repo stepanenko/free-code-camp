@@ -4,8 +4,6 @@
 function destroyer(arr) {
   var args = [...arguments].slice(1);
 
-  // arr.sort((a, b) => a - b);
-  // var newArr = [];
   args.forEach(arg => {
     //   newArr.push(arr.filter(el => el !== arg));
     console.log('forEach');
