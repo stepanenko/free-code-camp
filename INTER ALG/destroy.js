@@ -5,15 +5,23 @@ function destroyer(arr) {
   var args = [...arguments].slice(1);
 
   args.forEach(arg => {
-    //   newArr.push(arr.filter(el => el !== arg));
-    console.log('forEach');
     while (arr.includes(arg)) {
       let index = arr.indexOf(arg);
       arr.splice(index, 1);
-      console.log('while');
     }
   });
-  console.log(arr);
+
+  return arr;
 }
 
-destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+// Given solution:
+function destroyer2(arr) {
+  var args = Array.from(arguments).slice(1);
+  
+  return arr.filter(function(val) {
+    return !args.includes(val);
+  });
+}
+
+console.log(destroyer2([1, 2, 3, 1, 2, 3], 2, 3));
+
