@@ -17,11 +17,12 @@ function destroyer(arr) {
 // Given solution:
 function destroyer2(arr) {
   var args = Array.from(arguments).slice(1);
-  
-  return arr.filter(function(val) {
-    return !args.includes(val);
-  });
+
+  return arr.filter(val => !args.includes(val));
 }
 
-console.log(destroyer2([1, 2, 3, 1, 2, 3], 2, 3));
+// Given solution 2:
+const destroyer3 = (arr, ...args) => arr.filter(i => !args.includes(i));
+
+console.log(destroyer3([1, 2, 3, 1, 2, 3], 2, 3));
 
