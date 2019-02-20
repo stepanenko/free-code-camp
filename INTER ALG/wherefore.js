@@ -3,18 +3,21 @@
 
 function whatIsInAName(collection, source) {
   var arr = [];
-  // Only change code below this line
+  
   for (let i = 0; i < collection.length; i++) {
     var count = 0;
+    
     for (let el in source) {
       if (collection[i][el] === source[el]) {
         count++;
       }
     }
+    
     if (count === Object.keys(source).length) {
       arr.push(collection[i])
     }
   }
+  
   console.log(arr);
   return arr;
 }
