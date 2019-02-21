@@ -40,7 +40,6 @@ function whatIsInAName2(collection, source) {
 // ====  Given solution 2:  =====
 function whatIsInAName3(collection, source) {
   var srcKeys = Object.keys(source);
-  console.log(srcKeys);
 
   return collection.filter(obj => srcKeys.every(key => obj[key] === source[key]));
 }
