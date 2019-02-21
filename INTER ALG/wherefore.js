@@ -22,7 +22,7 @@ function whatIsInAName(collection, source) {
   return arr;
 }
 
-// Given solution 1:
+// ====  Given solution 1:  =====
 function whatIsInAName2(collection, source) {
   var srcKeys = Object.keys(source);
   console.log(srcKeys);
@@ -37,4 +37,12 @@ function whatIsInAName2(collection, source) {
   });
 }
 
-console.log(whatIsInAName2([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }));
+// ====  Given solution 2:  =====
+function whatIsInAName3(collection, source) {
+  var srcKeys = Object.keys(source);
+  console.log(srcKeys);
+
+  return collection.filter(obj => srcKeys.every(key => obj[key] === source[key]));
+}
+
+console.log(whatIsInAName3([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }));
