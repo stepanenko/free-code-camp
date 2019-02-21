@@ -22,4 +22,19 @@ function whatIsInAName(collection, source) {
   return arr;
 }
 
-whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 })
+// Given solution 1:
+function whatIsInAName2(collection, source) {
+  var srcKeys = Object.keys(source);
+  console.log(srcKeys);
+  
+  return collection.filter(obj => {
+    for (let i = 0; i < srcKeys.length; i++) {
+      if (!obj.hasOwnProperty(srcKeys[i]) || obj[srcKeys[i]] !== source[srcKeys[i]]) {
+        return false;
+      }
+    }
+    return true;
+  });
+}
+
+console.log(whatIsInAName2([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }));
