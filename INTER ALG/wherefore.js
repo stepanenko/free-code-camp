@@ -1,7 +1,9 @@
 
 // TASK: Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching name and value pairs (second argument). Each name and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.
 
-function whatIsInAName(collection, source) {
+// ====  My Solution 1  =====
+
+function whatIsInAName0(collection, source) {
   var arr = [];
   
   for (let i = 0; i < collection.length; i++) {
@@ -22,6 +24,21 @@ function whatIsInAName(collection, source) {
   return arr;
 }
 
+// ====  My Solution 2 (inspired by given solution 3 tips)  =====
+function whatIsInAName(collection, source) {
+  var srcKeys = Object.keys(source);
+
+  return collection.filter(obj => {
+    return srcKeys
+      .map(key => obj[key] === source[key])
+      .reduce((acc, bool) => {
+        if (!bool) {
+          acc = false;
+        }
+        return acc;
+    });
+  });
+}
 // ====  Given solution 1:  =====
 function whatIsInAName1(collection, source) {
   var srcKeys = Object.keys(source);
@@ -48,11 +65,17 @@ function whatIsInAName2(collection, source) {
 function whatIsInAName3(collection, source) {
   var srcKeys = Object.keys(source);
 
-  // return collection.filter(obj => {
-    return collection.map(o => {
-      return o[srcKeys[0]] === source[srcKeys[0]]
-    })
-  // });
+  return collection.filter(obj => {
+    return srcKeys
+      .map(key => {
+        return obj.hasOwnProperty(key) && obj[key] === source[key];
+      })
+      .reduce((a, b) => {
+        return a && b;
+      });
+  });
 }
 
 console.log(whatIsInAName3([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }));
+
+// console.log(whatIsInAName3([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }));
