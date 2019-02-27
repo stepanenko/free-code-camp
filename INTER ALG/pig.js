@@ -9,10 +9,26 @@ function translatePigLatin(str) {
     return str.slice(index) + str.slice(0, index) + 'ay';
   } else if (index === 0) {
     return str + 'way';
-  } else return str + 'ay';
+  } else {
+    return str + 'ay';
+  }
 }
 
-// My solution 2 with a hint 'substr()'
+// Given solution 1:
+function translatePigLatin2(str) {
+  var pigLatin = '';
+  var regex = /[aeiou]/gi;
 
+  if (str[0].match(regex)) {
+    pigLatin = str + 'way';
+  } else if (str.match(regex) === null) {
+    pigLatin = str + 'ay';
+  } else {
+    var index = str.indexOf(str.match(regex)[0]);
+    pigLatin = str.substr(index) + str.substr(0, index) + 'ay';
+  }
 
-console.log(translatePigLatin("glove"));
+  return pigLatin;
+}
+
+console.log(translatePigLatin2("glove"));
