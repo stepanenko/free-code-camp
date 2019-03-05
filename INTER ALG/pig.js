@@ -31,4 +31,37 @@ function translatePigLatin2(str) {
   return pigLatin;
 }
 
-console.log(translatePigLatin2("glove"));
+// Given solution 2:
+function translatePigLatin3(str) {
+  function check(obj) {
+    return ['a','i','u','e','o'].indexOf(str.charAt(obj)) == -1 ? check(obj + 1) : obj;
+  }
+
+  return str.substr(check(0)).concat((check(0) === 0 ? 'w' : str.substr(0, check(0))) + 'ay');
+}
+
+// Given solution 3:
+function translatePigLatin4(str) {
+  var strArr = [];
+  var tmpChar;
+
+  function isConsonant(char) {
+    return !/[aeiou]/.test(char);
+  }
+
+  if (!isConsonant(str.charAt(0))) {
+    return str + 'way';
+  }
+  else {
+    strArr = str.split('');
+  }
+
+  while (isConsonant(strArr[0])) {
+    tmpChar = strArr.shift();
+    strArr.push(tmpChar);
+  }
+  
+  return strArr.join('') + 'ay';
+}
+
+console.log(translatePigLatin4('glove'));
