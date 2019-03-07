@@ -15,6 +15,32 @@ function myReplace(str, before, after) {
   }
 }
 
+// Given solution 1:
+function myReplace1(str, before, after) {
+  var index = str.indexOf(before);
+
+  if (str[index] === str[index].toUpperCase()) {
+    after = after.charAt(0).toUpperCase() + after.slice(1);
+  }
+
+  str = str.replace(before, after);
+
+  return str;
+}
+
+// Given solution 2:
+function myReplace2(str, before, after) {
+  var regex = new RegExp(before, "gi");
+
+  if (/[A-Z]/.test(before[0])) {
+    after = after.charAt(0).toUpperCase() + after.slice(1);
+  }
+
+  var newStr = str.replace(regex, after);
+  
+  return newStr;
+}
+
 console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
 
 // Note: Preserve the case of the first character in the original word when you are replacing it.
