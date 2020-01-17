@@ -1,3 +1,4 @@
+// Any recursion can be rewritten as a loop. The loop variant usually can be made more effective!
 
 // TASK: The function should return an array of integers which begins with a number represented by the startNum parameter and ends with a number represented by the endNum parameter.
 

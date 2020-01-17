@@ -1,3 +1,4 @@
+// Any recursion can be rewritten as a loop. The loop variant usually can be made more effective!
 
 // Example task: write a recursive function that returns an array containing the numbers 1 through n. This function will need to accept an argument, n, representing the final number. Then it will need to call itself with progressively smaller values of n until it reaches 1:
 

@@ -1,3 +1,4 @@
+// Any recursion can be rewritten as a loop. The loop variant usually can be made more effective!
 
 // Example task: multiply the elements from 0 to n inclusive in an array to create the product of those elements. 
 
