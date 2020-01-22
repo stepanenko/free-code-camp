@@ -11,6 +11,22 @@ function pairElement(str) {
   });
 }
 
+// My solution 2:
+function pairElement2(str) {
+  const newArr = [];
+  for (let e of str) {
+    if (e === 'A') {
+      newArr.push([e, 'T'])
+    } else if (e === 'T') {
+      newArr.push([e, 'A'])
+    } else if (e === 'C') {
+      newArr.push([e, 'G'])
+    } else {
+      newArr.push([e, 'C']);
+    }
+  }
+  return newArr;
+}
 
-let result = pairElement("ATCGA");
+let result = pairElement2("ATCGA");
 console.log(result);
