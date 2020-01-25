@@ -57,5 +57,41 @@ function pairElement4(str) {
   return newArr;
 }
 
-let result = pairElement4("ATCGA");
+// My solution 5:
+function pairElement5(str) {
+  let newArr = [];
+  for (let i = 0; i < str.length; i++) {
+    newArr = str[i] === 'A' ? [...newArr, [str[i], 'T']] :
+             str[i] === 'T' ? [...newArr, [str[i], 'A']] :
+             str[i] === 'C' ? [...newArr, [str[i], 'G']] :
+                              [...newArr, [str[i], 'C']];
+  }
+  return newArr;
+}
+
+// Given Solution 1 (edited):
+function pairElement6(str) {
+  let newArr = [];
+
+  for (let i = 0; i < str.length; i++) {
+    switch (str[i]) {
+      case "A":
+        newArr.push(["A", "T"]);
+        break;
+      case "T":
+        newArr.push(["T", "A"]);
+        break;
+      case "C":
+        newArr.push(["C", "G"]);
+        break;
+      case "G":
+        newArr.push(["G", "C"]);
+        break;
+    }
+  };
+
+  return newArr;
+}
+
+let result = pairElement6("ATCGA");
 console.log(result);
