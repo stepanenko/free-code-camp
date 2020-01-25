@@ -93,5 +93,17 @@ function pairElement6(str) {
   return newArr;
 }
 
-let result = pairElement6("ATCGA");
+// Given Solution 2 (smart one, love it!):
+function pairElement7(str) {
+  const pairs = {
+    A: "T",
+    T: "A",
+    C: "G",
+    G: "C"
+  };
+  const arr = str.split("");
+  return arr.map(char => [char, pairs[char]]);
+}
+
+let result = pairElement7("ATCGA");
 console.log(result);
