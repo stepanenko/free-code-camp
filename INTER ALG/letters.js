@@ -1,5 +1,6 @@
 
-// TASK: Find the missing letter in the passed letter range and return it. If all letters are present in the range, return undefined.
+// TASK: Find the missing letter in the passed letter range and return it. 
+// If all letters are present in the range, return undefined.
 
 // My Solution 1:
 function fearNotLetter(str) {
@@ -10,25 +11,8 @@ function fearNotLetter(str) {
   }
 }
 
-// ===== working...
-let str = 'abde';
-let arr = [];
-let first = str[0];
-for(index in str) {
-  arr.push(str.charCodeAt(index));
-}
-let missing;
-for (let i = str.charCodeAt(0); i < str.charCodeAt(str.length - 1); i++) {
-
-  missing = arr.includes(i) ? undefined : i;
-}
-// console.log(missing);
-// includes
- // ===== end of working ====
-
-
 // Given Solution 1:
-function fearNotLetter2(str) {
+function fearNotLetter1(str) {
   for (let i = 0; i < str.length; i++) {
     let code = str.charCodeAt(i);
     if (code !== str.charCodeAt(0) + i) {
@@ -36,6 +20,20 @@ function fearNotLetter2(str) {
     }
   }
   return undefined;
+}
+
+// Given Solution 2:
+function fearNotLetter2(str) {
+  let compare = str.charCodeAt(0);
+  let missing;
+  str.split('').map((letter, index) => {
+    if (str.charCodeAt(index) == compare) {
+      ++compare;
+    } else {
+      missing = String.fromCharCode(compare);
+    }
+  });
+  return missing;
 }
 
 // const point = String.fromCodePoint(65, 66, 67, 68);   // ABCD
