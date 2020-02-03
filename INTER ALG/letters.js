@@ -36,6 +36,31 @@ function fearNotLetter2(str) {
   return missing;
 }
 
+// Given Solution 2 (edited with ternary):
+function fearNotLetter3(str) {
+  let compare = str.charCodeAt(0);
+  let missing;
+  str.split('').map((letter, index) => {
+    missing = (str.charCodeAt(index) == compare) ?
+      ++compare : String.fromCharCode(compare);
+  });
+  return missing;
+}
+
+// Given from comments:
+function fearNotLetter4(str) {
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  var len = str.length;
+  var start = alphabet.indexOf(str[0]);
+  
+  for(var i = start; i < start + len; i++){
+    if(!str.includes(alphabet[i])){
+      return alphabet[i];
+    }
+  }
+  return undefined;
+}
+
 // const point = String.fromCodePoint(65, 66, 67, 68);   // ABCD
-let output = fearNotLetter2("abcdeg");
+let output = fearNotLetter4("abdefgh");
 console.log(output);
