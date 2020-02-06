@@ -36,7 +36,7 @@ function fearNotLetter2(str) {
   return missing;
 }
 
-// Given Solution 2 (edited with ternary):
+// Given Solution 3 (edited with ternary):
 function fearNotLetter3(str) {
   let compare = str.charCodeAt(0);
   let missing;
@@ -49,11 +49,11 @@ function fearNotLetter3(str) {
 
 // Given from comments:
 function fearNotLetter4(str) {
-  var alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  var len = str.length;
-  var start = alphabet.indexOf(str[0]);
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  let len = str.length;
+  let start = alphabet.indexOf(str[0]);
   
-  for(var i = start; i < start + len; i++){
+  for(let i = start; i < start + len; i++){
     if(!str.includes(alphabet[i])){
       return alphabet[i];
     }
