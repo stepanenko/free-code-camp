@@ -5,4 +5,4 @@ let a = {
 
 const { start: { x: startX, y: startY }} = a;
 
-console.log(startX); // 4.5
+console.log(startX);   // 4.5
