@@ -15,8 +15,10 @@ function convertHTML(str) {
   return encoded;
 }
 
-let str1 = "Dolce & Gabbana";
-let str2 = "Hamburgers < Pizza < Tacos";
+const str1 = "Dolce & Gabbana";
+const str2 = "Hamburgers < Pizza < Tacos";
+const str3 = 'Stuff in "quotation marks"';
+const str4 = "Schindler's List";
 
-const output = convertHTML(str2);
+const output = convertHTML(str3);
 console.log(output);
