@@ -8,25 +8,25 @@
 
 // My solution:
 function sumFibs(num) {
-  return num;
+  'use strict';
+  const fibArray = [1, 1];
+  let next;
+  let sum = 0;
+  let i = 0;
+
+  for ( ; i < fibArray.length ; ) {
+    if (fibArray[i] > num) break;
+    next = fibArray[i] + fibArray[i + 1];
+    fibArray.push(next);
+    if (fibArray[i] % 2 !== 0) {
+      sum = sum + fibArray[i];
+    }
+    i++;
+  }
+
+  return sum;
 }
 
 
-let fibArray = [1, 1];
-let fibOdd = [1, 1];
-const num = 75025;
-const fibLen = 30;
-
-for (let i = 0; i < fibLen; i++) {
-  const current = fibArray[i] + fibArray[i + 1];
-  fibArray.push(current);
-  fibOdd = current % 2 === 0 ? [...fibOdd ] : [...fibOdd, current ];
-}
-
-const sum = fibArray.reduce((acc, el) => {
-  return acc += el % 2 !== 0 ? el : 0;
-})
-console.log(fibOdd);
-
-const output = sumFibs(4);
+const output = sumFibs(75024);
 console.log(output);
