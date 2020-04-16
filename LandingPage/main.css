@@ -1,50 +1,58 @@
+
 body {
-  background: #dad9a7
+  background: #bdc3ce;
 }
+
 @media screen and (max-width: 500px) {
   body {
-    background: #6b6974
+    background: #6b6974;
   }
 }
+
 @media screen and (max-width: 300px) {
   body {
-    background: #ca682f
+    background: #ca682f;
   }
 }
+
 #header-img {
   margin-top: 50px;
   height: auto;
   max-width: 100%;
   width: 400px;
 }
+
 nav {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  background: red;
+  background: #6b6974;
+  box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
 }
+
 ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
-  background: #a093d1;
   display: flex;
   height: 50px;
 }
+
 li {
-  background: green;
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 a {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
   color: white;
 }
+
 iframe {
   margin-bottom: 15px
 }
