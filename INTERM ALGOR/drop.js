@@ -21,7 +21,7 @@ function myDropElements2(arr, func) {   // 3.7ms
   return res.length ? arr.slice(res[0]) : [];
 }
 
-// My solution 3 (not ready):
+// My solution 3:
 function myDropElements3(arr, func) {   // 3.7ms
   let index = arr.indexOf(arr.filter(func)[0]);
   return index !== -1 ? arr.slice(index) : [];

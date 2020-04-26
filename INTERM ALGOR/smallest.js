@@ -6,7 +6,8 @@
 // For example, if given 1 and 3, find the smallest common multiple of both 1 and 3
 // that is also evenly divisible by all numbers between 1 and 3. The answer here would be 6.
 
-function mySmallestCommons(arr) {   // 32ms
+// My solution 1
+function mySmallestCommons(arr) {   // 37ms
   let first = arr[0];
   let last = arr[1];
   if (arr[0] > arr[1]) {
@@ -36,16 +37,17 @@ function mySmallestCommons(arr) {   // 32ms
   }
 }
 
-// console.log(mySmallestCommons([5, 1])); // should return 60  works well
-// console.log(mySmallestCommons([2, 10])); // should return 2520   works well
-// console.log(mySmallestCommons([1, 5])); // should return 60  works well
-// console.log(mySmallestCommons([1, 13])); // should return 360360  works well
-console.time('my');
-console.log(mySmallestCommons([23, 18])); // should return 6056820  works well
-console.timeEnd('my');
+console.time('speed');
+console.log(mySmallestCommons([5, 1])); // should return 60
+console.log(mySmallestCommons([2, 10])); // should return 2520 
+console.log(mySmallestCommons([1, 5])); // should return 60
+console.log(mySmallestCommons([1, 13])); // should return 360360
+console.log(mySmallestCommons([23, 18])); // should return 6056820
+console.timeEnd('speed');
 
-// Solution 1
-function smallestCommons1(arr) {   // 1.9ms
+
+// ==== Solution 1 ====
+function smallestCommons1(arr) {   // 5.5ms
   // Sort from greater to lowest
   arr.sort(function (a, b) {
     return b - a;
@@ -72,12 +74,9 @@ function smallestCommons1(arr) {   // 1.9ms
   return quot;
 }
 
-console.time('1');
-console.log(smallestCommons1([23, 18]));
-console.timeEnd('1');
 
-// Solution 2
-function smallestCommons2(arr) {   // 0.4ms
+// ==== Solution 2 ====
+function smallestCommons2(arr) {   // 2.7ms
   let range = [];
   for (let i = Math.max(arr[0], arr[1]); i >= Math.min(arr[0], arr[1]); i--) {
     range.push(i);
@@ -98,12 +97,9 @@ function smallestCommons2(arr) {   // 0.4ms
   }
 }
 
-console.time('2');
-console.log(smallestCommons2([23, 18]));
-console.timeEnd('2');
 
-// === Solution 3 ===
-function smallestCommons3(arr) {   // 0.3ms
+// ==== Solution 3 ====
+function smallestCommons3(arr) {   // 2.7ms
   // Euclidean algorithm for the greatest common divisor.
   // ref: https://en.wikipedia.org/wiki/Euclidean_algorithm
   const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
@@ -121,12 +117,9 @@ function smallestCommons3(arr) {   // 0.3ms
   return currentLCM;
 }
 
-console.time('3');
-console.log(smallestCommons3([23, 18]));
-console.timeEnd('3');
 
-// === Solution 4 ===
-const smallestCommons4 = (arr) => {   // 3ms
+// ==== Solution 4 ====
+function smallestCommons4(arr) {   // 8ms
   let max = Math.max(...arr);
   let min = Math.min(...arr);
   let sol = max;
@@ -141,7 +134,3 @@ const smallestCommons4 = (arr) => {   // 3ms
   }
   return sol;
 };
-
-console.time('4');
-console.log(smallestCommons4([23, 18]));
-console.timeEnd('4');
