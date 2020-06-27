@@ -28,11 +28,29 @@ function myDropElements3(arr, func) {   // 3.4ms
   return index !== -1 ? arr.slice(index) : [];
 }
 
+// Given solution 1:
+function dropElements(arr, func) {
+  let times = arr.length;
+  for (let i = 0; i < times; i++) {
+    if (func(arr[0])) {
+      break;
+    } else {
+      arr.shift();
+    }
+  }
+  return arr;
+}
+
+// Given solution 2:
+function dropElements2(arr, func) {
+  return arr.slice(arr.findIndex(func) >= 0 ? arr.findIndex(func) : arr.length);
+}
+
 console.time('3');
-console.log(myDropElements2([1, 2, 3, 4], function (n) { return n >= 3; }));  // should return [3, 4]
-console.log(myDropElements3([0, 1, 0, 1], function (n) { return n === 1; }));  // should return [1, 0, 1]
-console.log(myDropElements3([1, 2, 3], function (n) { return n > 0; }));  // should return [1, 2, 3]
-console.log(myDropElements3([1, 2, 3, 4], function (n) { return n > 5; }));  // should return []
-console.log(myDropElements3([1, 2, 3, 7, 4], function (n) { return n > 3; }));  // should return [7, 4]
-console.log(myDropElements3([1, 2, 3, 9, 2], function (n) { return n > 2; }));  // should return [3, 9, 2]
+console.log(dropElements2([1, 2, 3, 4], function (n) { return n >= 3; }));  // should return [3, 4]
+console.log(dropElements2([0, 1, 0, 1], function (n) { return n === 1; }));  // should return [1, 0, 1]
+console.log(dropElements2([1, 2, 3], function (n) { return n > 0; }));  // should return [1, 2, 3]
+console.log(dropElements2([1, 2, 3, 4], function (n) { return n > 5; }));  // should return []
+console.log(dropElements2([1, 2, 3, 7, 4], function (n) { return n > 3; }));  // should return [7, 4]
+console.log(dropElements2([1, 2, 3, 9, 2], function (n) { return n > 2; }));  // should return [3, 9, 2]
 console.timeEnd('3');
